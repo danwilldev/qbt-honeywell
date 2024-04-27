@@ -1,0 +1,1737 @@
+@import url(https://use.fontawesome.com/releases/v6.2.1/css/all.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/**
+ * NOTE(stacksmash76): It is possible to create a light version of this theme.
+ * All you have to do is extract light CSS color vars from @radix-ui/colors
+ * and replace them here. On top of that you will have to fix the icons
+ * and potentially balance the contrast out a bit.
+ *
+ * If you do go on this road, good luck and don't forget to share your work with others.
+ */
+:root {
+  --sage-1: #101211;
+  --sage-2: #171918;
+  --sage-3: #202221;
+  --sage-4: #272a29;
+  --sage-5: #2e3130;
+  --sage-6: #373b39;
+  --sage-7: #444947;
+  --sage-8: #5b625f;
+  --sage-9: #63706b;
+  --sage-10: #717d78;
+  --sage-11: #acb4b0;
+  --sage-12: #eceeed;
+
+  /** Radix red **/
+  --red-1: #191111;
+  --red-2: #201314;
+  --red-3: #3b1219;
+  --red-4: #500f1c;
+  --red-5: #611623;
+  --red-6: #72232d;
+  --red-7: #8c333a;
+  --red-8: #b54548;
+  --red-9: #e5484d;
+  --red-10: #ec5d5e;
+  --red-11: #ff9592;
+  --red-12: #ffd1d9;
+
+  --gold-1: #121211;
+  --gold-2: #1b1a17;
+  --gold-3: #24231f;
+  --gold-4: #2d2b26;
+  --gold-5: #38352e;
+  --gold-6: #444039;
+  --gold-7: #544f46;
+  --gold-8: #696256;
+  --gold-9: #978365;
+  --gold-10: #a39073;
+  --gold-11: #cbb99f;
+  --gold-12: #e8e2d9;
+
+  --gold-hl-primary: #b39770;
+  --gold-hl-secondary: #746247;
+
+  --blue-1: #0d1520;
+  --blue-2: #111927;
+  --blue-3: #0d2847;
+  --blue-4: #003362;
+  --blue-5: #004074;
+  --blue-6: #104d87;
+  --blue-7: #205d9e;
+  --blue-8: #2870bd;
+  --blue-9: #0090ff;
+  --blue-10: #3b9eff;
+  --blue-11: #70b8ff;
+  --blue-12: #c2e6ff;
+
+  --sand-1: #111110;
+  --sand-2: #191918;
+  --sand-3: #222221;
+  --sand-4: #2a2a28;
+  --sand-5: #31312e;
+  --sand-6: #3b3a37;
+  --sand-7: #494844;
+  --sand-8: #62605b;
+  --sand-9: #6f6d66;
+  --sand-10: #7c7a73;
+  --sand-11: #b4b2ac;
+  --sand-12: #eeeeec;
+
+  /* Change here */
+  --primary-0: var(--sand-1);
+  --primary-1: var(--sand-2);
+  --primary-2: var(--sand-3);
+  --primary-1-2: color-mix(in srgb, var(--primary-1), var(--primary-2));
+  --primary-3: var(--sand-4);
+  --primary-4: var(--sand-5);
+  --primary-5: var(--sand-6);
+  --primary-6-2: color-mix(in srgb, var(--primary-6), var(--primary-7));
+  --primary-6: var(--sand-7);
+  --primary-7: var(--sand-8);
+  --primary-8: var(--sand-9);
+  --primary-9: var(--sand-10);
+  --primary-10: var(--sand-11);
+  --primary-11: var(--sand-12);
+  --primary-12: white;
+
+  /* UNUSED */
+  --slate-1: #111113;
+  --slate-2: #18191b;
+  --slate-3: #212225;
+  --slate-4: #272a2d;
+  --slate-5: #2e3135;
+  --slate-6: #363a3f;
+  --slate-7: #43484e;
+  --slate-8: #5a6169;
+  --slate-9: #696e77;
+  --slate-10: #777b84;
+  --slate-11: #afb3ba;
+  --slate-12: #edeef0;
+
+  /** UNUSED: Taken from Adobe **/
+  --red-hl-1: #7b0000;
+  --red-hl-2: #8d0000;
+  --red-hl-3: #a50000;
+  --red-hl-4: #be0403;
+  --red-hl-5: #d71913;
+  --red-hl-6: #ea3829;
+  --red-hl-7: #f65843;
+  --red-hl-8: #ff755e;
+  --red-hl-9: #ff9581;
+  --red-hl-10: #ffb0a1;
+  --red-hl-11: #ffc9bd;
+  --red-hl-12: #ffded8;
+
+  /**
+   * If you change any any of the colors, then regenerate the filter definitions using
+   * https://angel-rs.github.io/css-color-filter-generator/
+   */
+  --primary-9-filter: brightness(0) saturate(100%) invert(41%) sepia(7%) saturate(411%) hue-rotate(9deg) brightness(98%) contrast(80%);
+  --gold-hl-primary-filter: brightness(0) saturate(100%) invert(71%) sepia(42%) saturate(303%) hue-rotate(355deg) brightness(81%) contrast(86%);
+
+  --transition-props: color,background-color,border-color,text-decoration-color,fill,stroke,-webkit-text-decoration-color;
+  --transition-duration: 100ms;
+  --transition-timing-function: cubic-bezier(.4,0,.2,1);
+
+  --color-RatioPoor: var(--primary-10);
+  --color-RatioCommon: #ffffff;
+  --color-RatioUncommon: #1eff00;
+  --color-RatioRare: #0070dd;
+  --color-RatioEpic: #a335ee;
+  --color-RatioLegendary: #ff8000;
+  --color-RatioArtifact: #e6cc80;
+  --color-RatioHeirloom: #00ccff;
+
+  --color-BadRed: #bd3636;
+  --color-GoodGreen: #36bd58;
+  --color-Orange: #c77920;
+  --color-Blue: #2e78d8;
+
+  --button-color: hsl(0 0% 17.9%);
+  --button-color-hover: var(--gold-9);
+  --button-text: #eee;
+  --accent-color: #2e78d8;
+  --accent-color-hover: #2e78d8;
+  --text: #eee;
+  --text-hover: #fff;
+  --link-color: #2e78d8;
+
+  --shadow-01: 0 1px 2px rgba(251,251,254,.2);
+  --shadow-02: 0 1px 6px rgba(251,251,254,.2);
+  --shadow-03: 0 1px 8px rgba(251,251,254,.2);
+}
+
+#mainWindowTabs {
+  position: relative;
+  top: 8px;
+}
+
+#prop_webseeds,
+#torrentTrackersTableFixedHeaderDiv,
+#torrentPeersTableFixedHeaderDiv,
+#torrentFilesTableFixedHeaderDiv {
+  border-bottom: 1px solid var(--primary-2);
+}
+
+#torrentsTableFixedHeaderDiv {
+  border-bottom: 1px solid var(--primary-5);
+}
+
+#transferList .dynamicTable td:first-child {
+  padding: 2px 2px 2px 6px !important;
+}
+
+#transferList .dynamicTable td {
+  padding: 2px !important;
+  border-bottom: 1px solid var(--primary-4);
+}
+
+#transferList.panel.expanded {
+  overflow-y: hidden !important;
+}
+
+/* THEME */
+html, body {
+  background: var(--primary-1) !important;
+  color: var(--primary-12);
+  font-family: Inter, Noto Sans, DejaVu Sans Mono, IBM Plex Sans, sans-serif, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+}
+
+#desktopHeader,
+#mochaToolbar {
+  background: var(--primary-2) !important;
+}
+
+a {
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  color: var(--primary-12);
+}
+
+#desktop {
+  height: 100vh;
+}
+
+#desktopNavbar {
+  background-color: var(--primary-1);
+  border-bottom: 1px solid var(--primary-3);
+}
+
+#desktopNavbar img[src="icons/checked.svg"] {
+  filter: var(--gold-hl-primary-filter) !important;
+}
+
+#desktopNavbar > ul > li > a {
+  color: var(--primary-9) !important;
+  border-bottom-color: var(--primary-3) !important;
+  border-radius: 4px;
+}
+
+#desktopNavbar > ul > li > a:hover {
+  color: var(--primary-11) !important;
+  background-color: var(--primary-3) !important;
+}
+
+#desktopNavbar > ul > li > ul {
+  background: var(--primary-5) !important;
+  background-image: none !important;
+  border: 1px solid var(--primary-9);
+  border-radius: 4px;
+  box-shadow: var(--shadow-01);
+}
+
+#desktopNavbar li ul li a {
+  position: relative;
+  min-width: 140px;
+  font-weight: normal;
+  padding: 4px 0 4px 4px;
+}
+
+
+#desktopNavbar > ul > li > ul > li:first-child > a {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+#desktopNavbar > ul > li > ul > li:last-child > a {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+#desktopNavbar > ul > li > ul > li > a:hover {
+  background: var(--primary-1) !important;
+}
+
+#desktopNavbar > ul > li > ul > li.divider {
+  border-top-color: var(--primary-8) !important;
+}
+
+#desktopFooterWrapper {
+  height: auto !important;
+}
+
+#desktopFooter {
+  padding: 2px 8px 0 8px !important;
+  background: var(--primary-4) !important;
+  color: var(--primary-12) !important;
+}
+
+#desktopFooter > table {
+  border: none;
+}
+
+#pageWrapper {
+  height: 100%;
+  border-top: 1px solid var(--primary-3) !important;
+  border-bottom: 1px solid var(--primary-6) !important;
+}
+
+.torrentTable th,
+.dynamicTable th {
+  background-color: var(--primary-1) !important;
+  color: var(--primary-12) !important;
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.torrentTable th:hover,
+.dynamicTable th:hover {
+  background-color: var(--primary-3) !important;
+}
+
+div#torrentsTableFixedHeaderDiv > table th:hover {
+  border-right: 1px solid var(--primary-6-2) !important;
+}
+
+div#torrentsTableDiv > table > tbody > tr:not(.selected) > td.headerCellHover {
+  background: var(--primary-4) !important;
+  border-bottom: 1px solid var(--primary-6-2) !important;
+  border-right: 1px solid var(--primary-6-2) !important;
+}
+
+div#torrentsTableDiv > table > tbody > tr:not(.selected):nth-child(odd) > td.headerCellHover {
+  background: var(--primary-5) !important;
+}
+
+.dynamicTable th {
+  border-right-color: var(--primary-3) !important;
+}
+
+.torrentTable tr,
+.dynamicTable tr {
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  background: var(--primary-1-2) !important;
+}
+
+.torrentTable tr:nth-child(odd),
+.dynamicTable tr:nth-child(odd) {
+  background: var(--primary-3) !important;
+}
+
+.torrentTable tr.selected,
+.torrentTable tr:hover,
+.dynamicTable tr.selected,
+.dynamicTable tr:hover {
+  color: var(--primary-12) !important;
+}
+
+.torrentTable tr.selected,
+.dynamicTable tr.selected {
+  background: var(--gold-hl-secondary) !important;
+}
+
+.dynamicTable tr.selected > td:nth-child(3) {
+  font-weight: 600 !important;
+}
+
+.torrentTable tr:hover,
+.dynamicTable tr:not(.selected):hover {
+  background: var(--gold-6) !important;
+}
+
+span.filterTitle:hover {
+  background: var(--primary-1);
+  color: var(--primary-12);
+}
+
+ul.filterList li {
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+ul.filterList li > a {
+  color: var(--primary-10);
+}
+
+ul.filterList li:not(.selectedFilter):hover {
+  background: var(--primary-4) !important;
+  color: var(--primary-12) !important;
+}
+
+.toolbarTabs {
+  padding-bottom: 0 !important;
+}
+
+.toolbarTabs li,
+.toolbarTabs li a {
+  background-image: none !important;
+  color: var(--primary-12) !important;
+}
+
+.toolbarTabs li {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
+  margin-bottom: 0 !important;
+  background: var(--primary-3) !important;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid var(--primary-5);
+  box-shadow: none;
+  background-position: left -70px;
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+}
+
+.toolbarTabs li:not(.selected):hover {
+  background: var(--primary-5) !important;
+}
+
+.toolbarTabs li.selected {
+  background: var(--gold-hl-secondary) !important;
+  border: 1px solid var(--gold-hl-primary);
+}
+
+.toolbarTabs li a {
+  margin-left: 0 !important;
+  padding: 4px 9px !important;
+}
+
+#propertiesPanel_header {
+  position: relative;
+  top: 3px;
+}
+
+#propertiesPanel_headerContent {
+  padding-top: 3px !important;
+}
+
+#prop_general fieldset,
+#watched_folders_tab tr,
+#watched_folders_tab th,
+#watched_folders_tab td {
+  border: 1px solid var(--primary-3) !important;
+}
+
+.icon16 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.panel {
+  background: var(--primary-1-2) !important;
+  border-bottom-color: var(--primary-3) !important;
+  color: var(--primary-11) !important;
+}
+
+.panel-header,
+.panel-headerContent {
+  background: var(--primary-1) !important;
+}
+
+.toolbarTabs {
+  background: none !important;
+}
+
+.panel-header {
+  border-bottom-color: var(--primary-1) !important;
+}
+
+.bottomPanel {
+  border-top: 1px solid var(--primary-3);
+}
+
+.horizontalHandle .handleIcon {
+  border-top: 1px solid var(--primary-5);
+  background-color: var(--primary-1);
+}
+
+.horizontalHandle {
+  background-image: none !important;
+}
+
+.mochaCanvas {
+  display: none !important;
+}
+
+.mochaTitlebar,
+.mochaTitlebar.replaced {
+  background: var(--primary-3) !important;
+  border-radius: 7px 7px 0 0;
+}
+
+.mochaTitle {
+  color: var(--primary-12) !important;
+}
+
+.mochaToolbarWrapper {
+  width: 100%;
+  position: relative;
+  height: 29px;
+  margin-bottom: -3px;
+  overflow: hidden;
+  border-top: unset;
+  border-bottom: 1px solid var(--primary-4);
+}
+
+.mochaToolbar {
+  border-top-color: var(--primary-3) !important;
+  background: var(--primary-3) !important;
+  padding-top: 4px;
+}
+
+.mochaContentWrapper {
+  background: var(--primary-1) !important;
+}
+
+.mocha::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  bottom: 7px;
+  right: 5px;
+  border-radius: 7px;
+  box-shadow: var(--shadow-03);
+  background-color: var(--primary-2);
+  z-index: -1000;
+}
+
+.mocha#preferencesPage::after {
+  bottom: 6px;
+}
+
+.contextMenu,
+.contextMenu li ul {
+  border-radius: 4px;
+  background: var(--primary-5) !important;
+  border-color: #5e5e5e !important;
+}
+
+.contextMenu li a {
+  color: var(--primary-12) !important;
+  border-radius: 4px;
+}
+
+.contextMenu li a:hover {
+  background: var(--primary-1) !important;
+}
+
+h2,
+h3 {
+  color: var(--primary-12);
+}
+
+/*Makes the toolbar buttons, rightclick menu and menu bar white*/
+.mochaToolButton,
+.contextMenu img,
+#desktopNavbar img,
+#addTrackersPlus {
+  filter: grayscale(90%) brightness(249%) !important;
+}
+
+/*Adjusts images in the footer and filter menu and torrents section (e.g. the downloading, seeding and paused icons) to be slightly brighter*/
+#filtersColumn img,
+#transferList_wrapper img,
+#desktopFooter img {
+  filter: brightness(100%);
+}
+
+#torrentsTableDiv tr.selected > td > img:not([src="icons/completed.svg"]) {
+  filter: brightness(300%) !important;
+}
+
+#torrentsTableDiv tr:hover > td > img {
+  filter: brightness(200%);
+}
+
+/*progressbar border*/
+div.progressbar_wrapper {
+  border-color: var(--primary-4) !important;
+}
+
+/* % of download completed*/
+.progressbar_dark {
+  background: var(--gold-hl-primary) !important;
+  color: var(--primary-12) !important;
+  text-shadow: -1px 1px 4px rgb(0, 0, 0);
+}
+
+/* % of download uncompleted*/
+.progressbar_light {
+  background: var(--primary-1) !important;
+  color: var(--primary-12) !important;
+  text-shadow: -1px 1px 4px rgb(0, 0, 0);
+}
+
+/* .panel-collapse {
+    filter: grayscale(100%) brightness(60%) !important;
+} */
+
+select {
+  color: var(--primary-12);
+  background-color: var(--primary-3);
+  border: 1px solid var(--primary-6);
+  padding: 2px 4px;
+}
+
+div.formRow > select {
+  margin: 2px 0;
+}
+
+input,
+textarea {
+  transition-property: var(--transition-props);
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-timing-function);
+  color: var(--primary-12);
+  background-color: var(--primary-3);
+  border: 1px solid var(--primary-5);
+  padding: 4px;
+  outline: none;
+}
+
+input:hover,
+textarea:hover {
+  border: 1px solid var(--primary-6);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--gold-9);
+  background: var(--primary-1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--primary-9) !important;
+}
+
+input:hover::placeholder,
+textarea:hover::placeholder {
+  color: var(--primary-10) !important;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+  color: var(--primary-8);
+  background-color: var(--primary-2);
+  border: 1px solid var(--primary-3);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--gold-9);
+}
+
+input[type="button"] {
+  padding: 4px 6px;
+  cursor: pointer;
+  background-color: var(--primary-4);
+  border: 1px solid var(--primary-6);
+}
+
+input[type="button"]:hover {
+  background-color: var(--primary-6) !important;
+}
+
+.select-watched-folder-editable {
+  position: relative;
+  background-color: var(--primary-3);
+  border: 0px;
+  width: 160px;
+  height: 20px;
+}
+
+#error_div {
+  color: red;
+}
+
+/* SCROLLBARS
+----------------------------------------------------------------------------------------------*/
+::-webkit-scrollbar-corner {
+  background-color: var(--primary-3);
+}
+
+::-webkit-scrollbar {
+  background-color: var(--primary-3);
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-8);
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+/* CREDITS
+----------------------------------------------------------------------------------------------*/
+div#aboutpage_content.mochaContent h3:nth-child(2)::after {
+  content: "\Awith the Honeywell theme. Based off nightwalker. Made by stacksmash76 and gl0ryus.\A\A";
+  white-space: pre-wrap;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+}
+
+/* WOW RATIO COLORS 
+----------------------------------------------------------------------------------------------*/
+.RatioPoor {
+  color: var(--color-RatioPoor);
+}
+
+.RatioCommon {
+  color: var(--color-RatioCommon);
+}
+
+.RatioUncommon {
+  color: var(--color-RatioUncommon);
+}
+
+.RatioRare {
+  color: var(--color-RatioRare);
+}
+
+.RatioEpic {
+  color: var(--color-RatioEpic);
+}
+
+.RatioLegendary {
+  color: var(--color-RatioLegendary);
+}
+
+.RatioArtifact {
+  color: var(--color-RatioArtifact);
+}
+
+@keyframes newglow {
+  from {
+    text-shadow: 0 0 4px #fff, 0 0 8px #fff, 0 0 13px #e60073, 0 0 18px #e60073;
+  }
+  to {
+    text-shadow: 0 0 8px #fff, 0 0 13px #ff4da6, 0 0 18px #ff4da6, 0 0 23px #ff4da6;
+  }
+}
+
+.RatioHeirloom:not(.invisible) {
+  overflow: visible;
+  color: yellow;
+  -webkit-animation: newglow 1s ease-in-out infinite alternate;
+  -moz-animation: newglow 1s ease-in-out infinite alternate;
+  animation: newglow 1s ease-in-out infinite alternate;
+}
+
+/* REMOVE UGLY DIVIDER GIF
+----------------------------------------------------------------------------------------------*/
+td.statusBarSeparator {
+  background-image: none;
+}
+
+#mochaToolbar .divider {
+  background-image: none;
+}
+
+/* TOP MENU ITEMS
+----------------------------------------------------------------------------------------------*/
+.MyMenuIcon {
+  margin-left: 0px;
+}
+
+/* ICONS IN LEFT SIDEBAR/FILTERLIST
+----------------------------------------------------------------------------------------------*/
+#statusFilterList li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#all_filter>a img {
+  display: none;
+}
+
+#all_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f0b0";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--primary-12);
+  width: 12px;
+}
+
+#downloading_filter>a img {
+  display: none;
+}
+
+#downloading_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f063";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--color-GoodGreen);
+  width: 12px;
+}
+
+#seeding_filter>a img {
+  display: none;
+}
+
+#seeding_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f062";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--color-Blue);
+  width: 12px;
+}
+
+#completed_filter>a img {
+  display: none;
+}
+
+#completed_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f00c";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--color-Blue);
+  width: 12px;
+}
+
+#resumed_filter>a img {
+  display: none;
+}
+
+#resumed_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f04b";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--color-GoodGreen);
+  width: 12px;
+}
+
+#paused_filter>a img {
+  display: none;
+}
+
+#paused_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f04c";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--color-Orange);
+  width: 12px;
+}
+
+#errored_filter>a img {
+  display: none;
+}
+
+#errored_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 16px;
+  content: "\f00d";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: rgb(219, 30, 37);
+  width: 12px;
+}
+
+#active_filter>a img {
+  display: none;
+}
+
+#active_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f0b0";
+  font-weight: 900;
+  display: inline-block;
+  padding: 0 6px;
+  color: var(--color-GoodGreen);
+  width: 12px;
+}
+
+#inactive_filter>a img {
+  display: none;
+}
+
+#inactive_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f0b0";
+  font-weight: 900;
+  display: inline-block;
+  color: hsl(28deg 69% 77%);
+  padding: 0 6px;
+  width: 12px;
+}
+
+#stalled_filter>a img {
+  display: none;
+}
+
+#stalled_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f0b0";
+  font-weight: 900;
+  display: inline-block;
+  color: hsl(10 78.0% 54.0%);
+  padding: 0 6px;
+  width: 12px;
+}
+
+#stalled_uploading_filter>a img {
+  display: none;
+}
+
+#stalled_uploading_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f093";
+  font-weight: 900;
+  display: inline-block !important;
+  padding: 0 6px;
+  width: 12px;
+}
+
+#stalled_downloading_filter>a img {
+  display: none;
+}
+
+#stalled_downloading_filter:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 14px;
+  content: "\f019";
+  font-weight: 900;
+  display: inline-block !important;
+  padding: 0 6px;
+  width: 12px;
+}
+
+/* REPLACE STANDARD ICONS WITH CUSTOM PNG VERSION
+----------------------------------------------------------------------------------------------*/
+
+img[src="icons/inode-directory.svg"] {
+  background: url("../icons/inode-directory.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/inode-tag.svg"] {
+  background: url("../icons/inode-tag.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/network-server.svg"] {
+  background: url("../icons/network-server.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/paused.svg"] {
+  background: url("../icons/paused.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
+img[src="icons/stalledDL.svg"] {
+  background: url("../icons/stalledDL.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/stalledUP.svg"] {
+  background: url("../icons/stalledUP.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  filter: var(--primary-9-filter) !important;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/uploading.svg"] {
+  background: url("../icons/seeding.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/downloading_small.svg"],
+img[src="icons/downloading.svg"] {
+  background: url("../icons/downloading.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/connected.svg"] {
+  background: url("../icons/connected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/disconnected.svg"] {
+  background: url("../icons/disconnected.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/slow.svg"] {
+  background: url("../icons/slow.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/slow_off.svg"] {
+  background: url("../icons/slow_off.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/completed.svg"] {
+  background: url("../icons/completed.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+img[src="icons/mail-folder-inbox.svg"] {
+  background: url("../icons/mail-folder-inbox.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  object-position: -999999px 999999px;
+}
+
+/* TOOLBAR ICONS
+----------------------------------------------------------------------------------------------*/
+
+#downloadButton>img.mochaToolButton {
+  display: none;
+}
+
+#downloadButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f0c1";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 5px;
+}
+
+#downloadButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f0c1";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#uploadButton>img.mochaToolButton {
+  display: none;
+}
+
+#uploadButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f067";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#uploadButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f067";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#deleteButton>img.mochaToolButton {
+  display: none;
+}
+
+#deleteButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f068";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#deleteButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f068";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#resumeButton>img.mochaToolButton {
+  display: none;
+}
+
+#resumeButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f04b";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#resumeButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f04b";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#pauseButton>img.mochaToolButton {
+  display: none;
+}
+
+#pauseButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f04c";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#pauseButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f04c";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#topPrioButton>img.mochaToolButton {
+  display: none;
+}
+
+#topPrioButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f102";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#topPrioButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f102";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#increasePrioButton>img.mochaToolButton {
+  display: none;
+}
+
+#increasePrioButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f106";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#increasePrioButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f106";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#decreasePrioButton>img.mochaToolButton {
+  display: none;
+}
+
+#decreasePrioButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f107";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#decreasePrioButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f107";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#bottomPrioButton>img.mochaToolButton {
+  display: none;
+}
+
+#bottomPrioButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f103";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#bottomPrioButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f103";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+#preferencesButton>img.mochaToolButton {
+  display: none;
+}
+
+#preferencesButton:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f013";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#preferencesButton:hover:before {
+  font-family: "Font Awesome 6 Free";
+  font-size: 24px;
+  content: "\f013";
+  font-weight: 900;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  color: white;
+}
+
+/* BASICS
+----------------------------------------------------------------------------------------------*/
+
+a,
+h2,
+h3,
+h4,
+.mochaTitlebar h3 {
+  color: #fff;
+}
+
+/* Login */
+#main h1 {
+  display: block;
+  font-size: 2em;
+  margin: 32px 0;
+  font-weight: bold;
+}
+
+#error_msg {
+  margin: 8px;
+  font-size: 20px;
+  color: var(--red-10);
+  background-color: var(--red-4);
+  border-radius: 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+div#error_msg:not(:empty) {
+  border: 1px solid var(--red-6);
+  padding: 8px 16px;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  margin: 32px auto;
+  padding: 0;
+  text-align: center;
+  width: 400px;
+  min-height: 260px;
+  background-color: var(--primary-1-2);
+  box-shadow: var(--shadow-02);
+}
+
+#logo img {
+  display: none;
+}
+
+#formplace {
+  display: flex;
+  margin: 0 auto;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 300 !important;
+  padding: 10px;
+}
+
+#formplace label {
+  font-weight: 500;
+}
+
+#mochaToolbar .divider {
+  background-image: none;
+  padding-left: 0px;
+}
+
+#mochaToolbar {
+  margin: unset;
+  padding: 4px 0;
+  height: auto !important;
+}
+
+/* li.divider {
+    border-top: 1px solid rgba(255, 255, 255, .25) !important;
+} */
+
+
+#loginform #login {
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid var(--gold-7);
+  background-color: var(--gold-6) !important;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--primary-12) !important;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#loginform #login:hover {
+  color: var(--primary-12) !important;
+  border: 1px solid var(--gold-9);
+  background-color: var(--gold-8) !important;
+}
+
+/* Sidemenu */
+li.selectedFilter {
+  background-color: var(--gold-hl-secondary);
+  font-weight: 600;
+}
+
+li.selectedFilter > a {
+  color: var(--primary-12) !important;
+}
+
+.columnHandle {
+  width: 3px;
+  background: var(--primary-4);
+  border-top: unset;
+  border-right: 1px solid var(--primary-6);
+  border-bottom: unset;
+  border-left: 1px solid var(--primary-6);
+}
+
+.columnHandle:after {
+  transform: rotate(90deg) !important;
+}
+
+/*Modal */
+
+.mochaTitlebar {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mochaToolButton {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.mochaToolButton:hover {
+  margin-right: 10px;
+  border-radius: 5px;
+  color: var(--color-Blue);
+}
+
+.mochaOverlay {
+  /* background: var(--primary-3) !important; */
+  height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 7px;
+  border: 1px solid var(--primary-7);
+}
+
+.mochaToolbar {
+  width: 100%;
+  border-top: none !important;
+}
+
+.mocha.isFocused .mochaTitlebar h3 {
+  color: #fff;
+}
+
+.mochaContentWrapper {
+  font-size: 12px;
+  overflow: auto;
+}
+
+.mochaContentBorder {
+  border-top: 1px solid var(--primary-4);
+  border-bottom: 1px solid var(--primary-4);
+}
+
+form#uploadForm > div {
+  border: unset !important;
+}
+
+fieldset.settings {
+  border: solid 1px var(--primary-4) !important;
+  padding: 4px 4px 10px 10px;
+}
+
+/* RSS
+----------------------------------------------------------------------------------------------*/
+
+#rssView {
+  padding: 20px 20px 0 20px;
+  height: calc(100% - 20px);
+}
+
+#rssContentView {
+  display: table;
+  width: 100%;
+  height: calc(100% - 30px);
+  vertical-align: top;
+}
+
+#rssFeedFixedHeaderDiv .dynamicTableHeader,
+#rssArticleFixedHeaderDiv .dynamicTableHeader {
+  cursor: default;
+}
+
+.alignRight {
+  float: right;
+}
+
+.unreadArticle {
+  color: var(--color-Blue) !important;
+}
+
+#rssFetchingDisabled {
+  color: var(--color-BadRed);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#centerRssColumn {
+  margin: 0 10px 0 10px;
+}
+
+#leftRssColumn,
+#centerRssColumn,
+#rightRssColumn {
+  float: left;
+  /* should be 20 px but due to rounding differences some browsers don't render that properly */
+  width: calc(calc(100% - 21px) / 3);
+  border: none;
+}
+
+#rightRssColumn {
+  overflow: auto;
+}
+
+#rssFeedTableDiv,
+#rssArticleTableDiv {
+  height: calc(100vh - 180px);
+}
+
+#rssTorrentDetailsName {
+  background-color: var(--color-Blue);
+  padding: 0;
+  color: white;
+}
+
+#rssTorrentDetailsDate {
+  background-color: var(--primary-3);
+}
+
+#rssDetailsView {
+  height: calc(100vh - 135px);
+  overflow: auto;
+}
+
+#rssButtonBar {
+  overflow: hidden;
+  height: 30px;
+}
+
+#rssContentView table {
+  width: 100%;
+}
+
+#rssDescription {
+  width: 100%;
+  border: none;
+}
+
+#rssdownloaderpage_content {
+  height: calc(100% - 30px);
+}
+
+#RssDownloader {
+  height: 100%;
+}
+
+#leftRssDownloaderColumn {
+  width: 25%;
+  float: left;
+}
+
+#rulesTable,
+#rssDownloaderArticlesTable {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#centerRssDownloaderColumn {
+  width: 50%;
+  float: left;
+}
+
+#rightRssDownloaderColumn {
+  width: 25%;
+  float: left;
+}
+
+.fullWidth {
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+#rssDownloaderFeeds {
+  height: calc(100% - 355px);
+  overflow: hidden;
+}
+
+#rssDownloaderFeedsTable {
+  height: calc(100% - 21px);
+  width: 100%;
+  overflow: auto;
+}
+
+#saveButton {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.articleTableFeed td {
+  font-weight: bold;
+}
+
+.articleTableArticle td {
+  padding-left: 22px;
+}
+
+#rssDownloaderDisabled {
+  color: var(--color-BadRed);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#rulesTable table,
+#rssDownloaderFeedsTable table,
+#rssDownloaderArticlesTable table {
+  width: 100%;
+}
+
+#ignoreDaysValue {
+  width: 4em;
+}
+
+#lastMatchDiv {
+  float: right;
+}
+
+#ruleSettings {
+  padding: 4px 10px 4px 10px;
+}
+
+#topMenuBar {
+  height: 26px;
+}
+
+#rulesTableDesc {
+  vertical-align: middle;
+}
+
+.imageButton {
+  height: 22px;
+  width: 24px;
+  margin: 1px 2px 1px 2px;
+  border: 1px solid;
+  border-radius: 2px;
+  background-color: #efefef;
+  border-color: #767676;
+  background-position: center center;
+  vertical-align: middle;
+}
+
+.imageButton:hover {
+  background-color: #e5e5e5;
+  border-color: #4f4f4f;
+}
+
+.imageButton:active {
+  background-color: #f5f5f5;
+  border-color: #8d8d8d;
+}
+
+#newRuleButton {
+  float: right;
+  background-image: url("../icons/document-new.svg");
+}
+
+#deleteRuleButton {
+  float: right;
+  background-image: url("../icons/list-remove.svg");
+}
