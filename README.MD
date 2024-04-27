@@ -28,7 +28,7 @@
 ### Linux
 1. `sudo -i`
 2. `mkdir -p /opt && cd /opt`
-3. `git clone https://github.com/stacksmash76/qbt-honeywell.git honeywell`
+3. `git clone https://github.com/danwilldev/qbt-honeywell.git honeywell`
 4. `chown -R nobody:nogroup honeywell`
 
 
